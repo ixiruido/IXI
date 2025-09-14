@@ -1,20 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta name="description" content="Sitio oficial del artista IXI, música, fotos y novedades.">
+  <link rel="icon" type="image/png" href="logo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IXI</title>
+  <title>Vinilo en blanco</title>
+  <meta name="description" content="Sitio oficial de Vinilo en Blanco. Banda argentina de indierock. Música, novedades y contacto.">
+<meta name="keywords" content="vinilo en blanco, musica, vinilo, blanco, banda, música, rock, pop, canciones, oficial">
+<meta name="author" content="Vinilo en Blanco">
+    <style>
+    /* Efecto de fondo respirando */
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #111; /* color inicial */
+      animation: respirar 8s infinite alternate;
+      color: white; /* texto visible sobre fondo oscuro */
+      font-family: Arial, sans-serif;
+    }
+
+   @keyframes respirar {
+  0%   { background-color: #111; }
+  25%  { background-color: #333; }
+  50%  { background-color: #555; }
+  75%  { background-color: #333; }
+  100% { background-color: #111; }
+}.slider {
+  width: 85%;      
+  margin: 0 auto;    
+}
+
+.slider img {
+  width: 85%;  
+  height: auto; 
+}
+
+.thumbnails {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.thumbnails img {
+  width: 6%;      
+  height: auto;     
+  object-fit: cover; 
+  cursor: pointer;   
+  border: 2px solid transparent;  
+  transition: border 0.3s;
+}
+
+.thumbnails img.active {
+  border: 2px solid #ffffff;
+}
+body {
+padding: 35px 30%;}
+  
+@media (max-width: 700px){
+body {
+padding: 10px 10%;}
+}
+
+
+</style>
+  
+  <script src="https://www.youtube.com/iframe_api"></script>
 </head>
-<body style="font-family: Arial; text-align: center; background: #111; color: #eee; padding: 40px;">
-  <h1>🎵 IXI 🎵</h1>
-  <p>Bienvenido a mi espacio web (EN CONSTRUCCION). Escuchá mis canciones aquí:</p>
-  
+<body style="font-family: Arial; text-align: center; background: #111; color: #eee;">
+  <h1><img src="logo.png" alt="Vinilo en Blanco" width="80%"></h1>
+  <p style="font-size: 11px;">Proyecto musical independiente de Argentina.</p>
+
   <p>
-    <a href="https://soundcloud.com/" target="_blank">🎧 SoundCloud</a> |
-    <a href="https://open.spotify.com/artist/" target="_blank">🎶 Spotify</a> |
-    <a href="https://www.youtube.com/@ViniloEnBlanco" target="_blank">▶️ YouTube</a>
+    <a href="https://open.spotify.com/artist/5T6rb5wXVx7VAThGr3f7xF" target="_blank"><img src="spotilogo.svg" alt="Spotify de Vinilo en Blanco" width="20%" style="margin-right:16px;"></a>   
+    <a href="https://instagram.com/viniloenblanco" target="_blank"><img src="iglogo.svg" alt="Instagram de Vinilo en Blanco" width="20%" style="margin-right:15px;"></a>    
+   <a href="https://www.youtube.com/@ViniloEnBlanco" target="_blank"><img src="ytlogo.svg" alt="Youtube de Vinilo en Blanco" width="23%" style="margin-top:15px;"></a>
   </p>
+   <p style="margin-top:10%"><iframe width="80%" height="auto" src="https://www.youtube.com/embed/videoseries?si=h_bkQbefDtzlLu4u&amp;list=PLkelDjjdRNSYBEe-Zdw64rhEaKcqh4Nea&vq=hd1080" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="0"></iframe></p>
+<p><a href="mailto:viniloenblancobanda@gmail.com"><img src="correologo.png" alt="Contacto" width="10%" style="filter: invert(85%);"></a></p>
+
+  <h2 style="margin-top:50px">INFO</h2>
+<p> Somos Vinilo en Blanco, una banda de indie rock de Argentina. <span style="color: pink; font-size: 12px">#indieargentino #indierock #bandaemergente #latinmusic</span>.</p> 
+<p>La banda fue formada en el año 2016 en Villa Regina, Río Negro, disuelta en 2019, y renacida en 2024. Su sonido combina rock moderno, indierock, pop, y potencia de power trío. Conformada por IXI en bajo, voz y producción; Pichu en batería y voz; y Ariel en guitarra y coros.</p>
+    
+     <p>    
+  <div class="slider">
+  <img id="mainImage" src="A.JPG" alt="Imagen principal">
+</div>
+
+<div class="thumbnails">
+  <img src="A.JPG" alt="Ariel y Pichu de Vinilo en Blanco" onclick="showImage(0)" class="active">
+  <img src="B.JPG" alt="Ariel de Vinilo en Blanco" onclick="showImage(1)">
+  <img src="C.JPG" alt="Pichu de Vinilo en Blanco" onclick="showImage(2)">
+  <img src="D.JPG" alt="IXI de Vinilo en Blanco" onclick="showImage(3)">
+  <img src="E.JPG" alt="Vinilo en Blanco en vivo" onclick="showImage(4)">
+  <img src="F.JPG" alt="Vinilo en Blanco en vivo en la Vendimia" onclick="showImage(5)">
+  <img src="G.JPG" alt="Vinilo en Blanco banda" onclick="showImage(6)">
+</div>
+
+<script>
+  const images = ["A.JPG", "B.JPG", "C.JPG", "D.JPG", "E.JPG", "F.JPG", "G.JPG"];
+  let current = 0;
+
+  function showImage(index) {
+    current = index;
+    document.getElementById("mainImage").src = images[index];
+    // Actualiza miniaturas activas
+    document.querySelectorAll(".thumbnails img").forEach((thumb, i) => {
+      thumb.classList.toggle("active", i === index);
+    });
+  }
+
+  // Cambio automático cada 5 segundos
+  setInterval(() => {
+    current = (current + 1) % images.length;
+    showImage(current);
+  }, 5000);
+</script>     
+   </p>        
   
-  <p>Contactame en: <a href="mailto:viniloenblancobanda@gmail.com">viniloenblancobanda@gmail.com</a></p>
-</body>
+    <h2 style="margin-top:50px">BIOGRAFÍA</h2>
+ <p>Vinilo en Blanco nació en 2015 en Villa Regina como un proyecto escolar que rápidamente se convirtió en algo más. La incorporación de Pichu como baterista y vocalista, junto a Ariel en guitarra e Ixi en bajo, consolidó una formación que pronto descubriría su química única. El trío comenzó a forjar una identidad propia y a enamorar al público local con su energía.</p>
+
+    <p>En 2016 lanzaron su primer demo, <em>Dicen</em>, un tema que reflejaba su impulso por seguir sus sueños pese a las críticas. Entre shows el trío fue ganando reconocimiento y experimentando con su sonido: Pichu animó a Ixi a cantar en vivo por primera vez, mientras Ixi empezó a desarrollarse como productor, aprendiendo a grabar y moldear el sonido del grupo, y Ariel ampliaba su sonoridad con la primera pedalera que la banda le regaló.</p>
+
+    <p>Sin embargo, el crecimiento también trajo tensiones. Para 2019, diferencias creativas y conflictos personales provocaron su separación, un golpe que cada uno vivió de manera distinta. La pandemia permitió transitar esa pausa, mientras Ariel e Ixi intentaban reconstruir la química original sin éxito. La distancia les enseñó la importancia de escucharse y respetar los tiempos de cada uno.</p>
+
+    <p>En 2023, el reencuentro fue la chispa de una nueva etapa. Con madurez y amistades reparadas, la banda retomó su camino con una visión clara: crear con libertad y dejar un legado artístico. En 2024 lanzaron <em>Héroes</em>, marcando su regreso, y hoy trabajan en su primer álbum, con un sonido indie rock potente y letras profundas. Vinilo en Blanco sigue siendo un trío de amigos haciendo música auténtica, independiente y con la pasión intacta que los unió desde el principio.</p>
+     <h2 style="margin-top:50px; text-align: left">DISCOGRAFÍA</h2>
+      <p style="font-size: 13px; text-align: left">(<span style="color: #ff234689;">2016</span>) Dicen (Demo)  No disponible</p>
+        <p style="font-size: 13px; text-align: left">(<span style="color: #ff234689;">2017</span>) Parte 1(EP: Dicen, Depredador, Telarañas) No disponible</p>
+           <p style="font-size: 13px; text-align: left">(<span style="color: #ff234689;">2018</span>) ??? (Album) No publicado</p>
+          <p style="font-size: 13px; text-align: left;">(<span style="color: green;">2024</span>) HEROES HASTA AHORA (Single)</p>
+            <p style="font-size: 13px; text-align: left">(<span style="color: green;">2025</span>) ALMOHADA (Single) </p>
+              <p><div style="display:flex; justify-content:center;"><iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1DHeu0M70iQ7bjJw5PKChS?utm_source=generator" width="100%" height=250 frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div></p>
+           <p>
+    <a href="https://open.spotify.com/artist/5T6rb5wXVx7VAThGr3f7xF" target="_blank"><img src="spotilogo.svg" alt="Spotify de Vinilo en Blanco" width="11%" style="margin-right:11px;"></a>   
+    <a href="https://instagram.com/viniloenblanco" target="_blank"><img src="iglogo.svg" alt="Instagram de Vinilo en Blanco" width="11%" style="margin-right:10px;"></a>    
+   <a href="https://www.youtube.com/@ViniloEnBlanco" target="_blank"><img src="ytlogo.svg" alt="Youtube de Vinilo en Blanco" width="13%" style="margin-top:10px; margin-right:10px"></a>
+      <a href="https://www.tiktok.com/@viniloenblanco" target="_blank"><img src="tiktoklogo.svg" alt="TikTok de Vinilo en Blanco" width="11%" style="margin-right:10px;"></a>    
+    <a href="https://m.facebook.com/61580283870806/" target="_blank"><img src="fblogo.svg" alt="Facebook de Vinilo en Blanco" width="11%" style="margin-right:10px;"></a>   
+    <a href="https://www.threads.com/@viniloenblanco" target="_blank"><img src="threadslogo.PNG" alt="Threads de Vinilo en Blanco" width="11%" style="margin-top:15px;filter: invert(85%);"></a>
+  </p>
+           <p>
+</p>
+  <p style="font-size: 11px;">Web en desarrollo by ixi.</p>
+            <p style="font-size: 8px;">Vinilo en Blanco ® – Marca registrada (INPI)</p>
+           </body>
 </html>
