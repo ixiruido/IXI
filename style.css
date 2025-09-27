@@ -1,0 +1,60 @@
+    /* Efecto de fondo respirando */
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #111; /* color inicial */
+      animation: respirar 8s infinite alternate;
+      color: white; /* texto visible sobre fondo oscuro */
+      font-family: Arial, sans-serif;
+    }
+
+   @keyframes respirar {
+  0%   { background-color: #111; }
+  25%  { background-color: #333; }
+  50%  { background-color: #555; }
+  75%  { background-color: #333; }
+  100% { background-color: #111; }
+}.slider {
+  width: 90%;      
+  margin: 0 auto;    
+}
+
+.slider img {
+  width: 90%;  
+  height: auto; 
+}
+
+.thumbnails {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.thumbnails img {
+  width: 7%;      
+  height: auto;     
+  object-fit: cover; 
+  cursor: pointer;   
+  border: 2px solid transparent;  
+  transition: border 0.3s;
+}
+
+.thumbnails img.active {
+  border: 2px solid #ffffff;
+}
+body {
+padding: 2% 30%;}
+  
+@media (max-width: 700px){
+body {
+padding: 2% 10%;}
+}
+
+.l {
+      color: inherit;          /* mismo color que el texto */
+      text-decoration: none;   /* sin subrayado */
+      cursor: pointer;         /* NO aparece la manito */
+      pointer-events: auto;    /* mantiene el click activo */
+    }
