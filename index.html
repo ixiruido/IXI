@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta name="description" content="Sitio oficial del artista IXI B, música, fotos y novedades.">
-  <link rel="icon" type="image/png" href="favicon.jpg">
+  <link rel="icon" type="image/png" href="favicon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IXI</title>
@@ -27,23 +27,15 @@
 <p> Soy IXI (IXI B), un artista de indie rock de Argentina. Soy bajista en Vinilo en Blanco y productor <span style="color: pink; font-size: 12px">#indieargentino #indierock #bandaemergente #latinmusic</span>.</p> 
 <p>Este proyecto solista nace de la necesidad de un lugar de expresión en el año 2018 en Villa Regina, Río Negro. Combina sonidos de rock moderno, indierock, pop, trap y música electrónica. Compuesto y producido por IXI.</p>
     
-     <p>    
-  <div class="slider">
-  <img id="mainImage" src="A.jpg" alt="Imagen principal">
-</div>
-
-<div class="thumbnails">
-  <img src="A.jpg" alt="IXI en vivo" onclick="showImage(0)" class="active">
-  <img src="B.JPG" alt="Portada de Irse se trata de volver de IXI" onclick="showImage(1)">
-  <img src="C.jpg" alt="Logo de IXI" onclick="showImage(2)">
-  <img src="A.jpg" alt="IXI en vivo" onclick="showImage(3)">
-  <img src="B.JPG" alt="Portada de Irse se trata de volver de IXI" onclick="showImage(4)">
-  <img src="C.jpg" alt="Logo de IXI" onclick="showImage(5)">
-  <img src="A.jpg" alt="IXI en vivo" onclick="showImage(6)">
-</div>
-
-<script>
-  const images = ["A.jpg", "B.JPG", "C.jpg", "A.jpg", "B.JPG", "C.jpg", "A.jpg"];
+<div id="album-fotos"></div>
+ <script>
+  fetch('album-fotos.html')
+    .then(response => response.text())
+    .then(data => {document.getElementById('album-fotos').innerHTML = data;
+});
+ </script>  
+<script> <!-- Animación Album -->
+  const images = ["A.JPG", "B.JPG", "C.JPG", "D.JPG", "E.JPG", "F.JPG", "G.JPG"];
   let current = 0;
 
   function showImage(index) {
@@ -60,8 +52,9 @@
     current = (current + 1) % images.length;
     showImage(current);
   }, 5000);
-</script>     
-   </p>        
+</script>   
+
+     </p>        
   
     <h2 style="margin-top:50px">BIOGRAFÍA</h2>
  <p>IXI nació como idea en 2018, justo después de la separación de mi banda anterior, Vinilo en Blanco. A mis 21 años, sentí la necesidad de encontrar un medio de expresión propio, y una nueva identidad,pero nunca me sentí completamente listo para mostrarlo al mundo. Durante años, IXI permaneció en gestación, un laboratorio personal donde exploraba sonidos y emociones hasta encontrar la voz auténtica que hoy define el proyecto.</p>
@@ -71,20 +64,23 @@
     <p>Lo que impulsa IXI es la idea de expresarse sin miedo, sin importar nada más. Cada nota y cada atmósfera son un acto de autenticidad, un recordatorio de que a veces el gesto más puro es simplemente hacer ruido y dejarse sentir, sin filtros ni límites.</p>
 
     <p>Tras años de preparación, IXI finalmente empezó a tomar forma en 2024, listo para compartir su mundo musical. Es un proyecto que sigue creciendo, invitando a quienes escuchan a explorar, sentir y dejarse llevar por la música como un espacio seguro para la expresión y la experimentación.</p>
-     <h2 style="margin-top:50px; text-align: left">DISCOGRAFÍA</h2>
-      <p style="font-size: 13px; text-align: left">(<span style="color: #ff234689;">2019</span>) Irse se trata de volver (Demo)  No disponible</p>
-        <p style="font-size: 13px; text-align: left">(<span style="color: #green;">2025</span>) Irse se trata de volver (A UNO MISMO) (Single)</p>
-      <p><div style="display:flex; justify-content:center;"><iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0I5LGqT8I9OElpPTXJ0NLC?utm_source=generator" width="100%" height=250 frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div></p>
-           <p>
-    <a href="https://open.spotify.com/artist/5doXKNecFEUVI3tVZ3wdLP" target="_blank"><img src="spotilogo.svg" alt="Spotify de IXI" width="11%" style="margin-right:11px; filter: invert(85%);"></a>   
-    <a href="https://instagram.com/ixi.ruido" target="_blank"><img src="iglogo.svg" alt="Instagram de IXI" width="11%" style="margin-right:10px;filter: invert(85%);"></a>    
-   <a href="https://m.youtube.com/@ixiruido" target="_blank"><img src="ytlogo.svg" alt="Youtube de IXI" width="13%" style="margin-top:10px; margin-right:10px;filter: invert(85%);"></a>
-      <a href="https://www.tiktok.com/@ixi.ruido" target="_blank"><img src="tiktoklogo.svg" alt="TikTok de IXI" width="11%" style="margin-right:10px;filter: invert(85%);"></a>    
-    <a href="https://m.facebook.com/61576551660853/" target="_blank"><img src="fblogo.svg" alt="Facebook de IXI" width="11%" style="margin-right:10px;filter: invert(85%);"></a>   
-    <a href="https://www.threads.com/@viniloenblanco" target="_blank"><img src="threadslogo.PNG" alt="Threads de IXI" width="11%" style="margin-top:15px;filter: invert(21%);"></a>
-  </p>
-           <p>
-</p>
+
+<div id="discografia"></div>
+ <script>
+  fetch('discografia.html')
+    .then(response => response.text())
+    .then(data => {document.getElementById('discografia').innerHTML = data;
+});
+ </script>
+
+<div id="contenedor-redes"></div>
+ <script>
+  fetch('contenedor-redes.html')
+    .then(response => response.text())
+    .then(data => {document.getElementById('contenedor-redes').innerHTML = data;
+});
+ </script>
+         
   <p style="font-size: 11px;">Web en desarrollo by ixi.</p>
             <p style="font-size: 8px;">IXI ® – Marca registrada (INPI)</p>
            </body>
