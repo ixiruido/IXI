@@ -2,9 +2,9 @@
     body {
       margin: 0;
       height: 100vh;
-      background-color: #111; /* color inicial */
+      background-color: #FFFFFF; /* color inicial */
       animation: respirar 8s infinite alternate;
-      color: white; /* texto visible sobre fondo oscuro */
+      color: #111; /* texto visible sobre fondo oscuro */
       font-family: Arial, sans-serif;
     }
 
