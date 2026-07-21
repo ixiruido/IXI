@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="description" content="Biografia oficial de la banda Vinilo en Blanco. Banda argentina de indierock. Música, novedades y contacto.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinilo en blanco - Biografía</title>
+  <meta name="keywords" content="vinilo en blanco, biografia, musica, vinilo, blanco, banda, artista, música, rock, pop, canciones, oficial, argentina, indierock">
+  <meta name="author" content="Vinilo en Blanco">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body style="font-family: Arial; text-align: center; background: #FFFFFF; color: #111;">
+
+  <h1>BIOGRAFÍA</h1>
+
+<div id="album-fotos"></div>
+ <script>
+  fetch('album-fotos.html')
+    .then(response => response.text())
+    .then(data => {document.getElementById('album-fotos').innerHTML = data;
+});
+ </script>  
+<script> <!-- Animación Album -->
+  const images = ["A.JPG", "B.JPG", "C.JPG", "D.JPG", "E.JPG", "F.JPG", "G.JPG"];
+  let current = 0;
+
+  function showImage(index) {
+    current = index;
+    document.getElementById("mainImage").src = images[index];
+    // Actualiza miniaturas activas
+    document.querySelectorAll(".thumbnails img").forEach((thumb, i) => {
+      thumb.classList.toggle("active", i === index);
+    });
+  }
+
+  // Cambio automático cada 5 segundos
+  setInterval(() => {
+    current = (current + 1) % images.length;
+    showImage(current);
+  }, 5000);
+</script>  
+
+<p style="font-size: 11px;">EN CONSTRUCCIÓN.</p>
+  <p>-</p>
+  <p>-</p>
+  <p>-</p>
+  <p>-</p>
+  
+<h2 style="text-align: center"><a href="/index.html" class="l">VOLVER AL INICIO</a></h2>
+    
+<div id="lista-prensa"></div>
+<script>
+fetch('lista-prensa.html')
+  .then(res => res.text())
+  .then(data => document.getElementById('lista-prensa').innerHTML = data);
+</script>
+
+<div id="pie-pagina" style="text-align: center"></div> 
+<script>
+fetch('pie-pagina.html')
+  .then(res => res.text())
+  .then(data => document.getElementById('pie-pagina').innerHTML = data);
+</script>
+</body>
+</html>

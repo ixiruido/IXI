@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="description" content="Presskit oficial de IXI. Artista Argentino de indierock. Música, novedades y contacto.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IXI - PRESSKIT</title>
+  <meta name="keywords" content="ixi, presskit, biografia, musica, ixi, banda, artista, música, rock, pop, canciones, oficial, argentina, indierock">
+  <meta name="author" content="IXI B">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body style="font-family: Arial; text-align: center; background: #FFFFFF; color: #111;">
+ 
+<h1><img src="logo.png" alt="IXI" width="60%"></h1>
+
+<h1>PRESSKIT 2026</h1>
+  <p style="font-size: 11px;">EN CONSTRUCCIÓN</p>
+
+<p>-</p>
+<p>-</p>
+
+<!-- Reproductor de Youtube-->
+<p style="margin-top:10%"><iframe width="80%" height="auto" src="https://www.youtube.com/embed/videoseries?si=kIW0dZ6hg8ec9MzD&amp;list=PLXXt7n8h9ocBOqJIMq5qrJBT-7ywl4n1G&vq=hd1080" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="0"></iframe></p>
+ 
+<h1>BIO</h1>
+  <p style="font-size: 11px;">Fecha.</p>
+
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+
+<h1>FOTOS</h1>
+<div id="album-fotos"></div>
+ <script>
+  fetch('album-fotos.html')
+    .then(response => response.text())
+    .then(data => {document.getElementById('album-fotos').innerHTML = data;
+});
+ </script>  
+<script> <!-- Animación Album -->
+  const images = ["A.JPG", "B.JPG", "C.JPG", "D.JPG", "E.JPG", "F.JPG", "G.JPG"];
+  let current = 0;
+
+  function showImage(index) {
+    current = index;
+    document.getElementById("mainImage").src = images[index];
+    // Actualiza miniaturas activas
+    document.querySelectorAll(".thumbnails img").forEach((thumb, i) => {
+      thumb.classList.toggle("active", i === index);
+    });
+  }
+
+  // Cambio automático cada 5 segundos
+  setInterval(() => {
+    current = (current + 1) % images.length;
+    showImage(current);
+  }, 5000);
+</script>      
+   
+<p style="margin-top: 15%; font-size: 20px">Temas para charlar en notas en vivo</p>
+  <p style="font-size: 14px; text-align: left">•	- /p>
+  <p style="font-size: 14px; text-align: left">•	- /p>
+  <p style="font-size: 14px; text-align: left">•	- /p>
+  <p style="font-size: 14px; text-align: left">•	- /p>
+  <p style="font-size: 14px; text-align: left">•	- /p>
+  <p style="font-size: 14px; text-align: left">•	- /p>
+  <p style="font-size: 14px; text-align: left">•	- /p>
+  <p style="font-size: 14px; text-align: left">•	- /p>
+
+<div id="discografia"></div>
+ <script>
+  fetch('discografia.html')
+    .then(response => response.text())
+    .then(data => {document.getElementById('discografia').innerHTML = data;
+});
+ </script>
+  
+<div id="contenedor-redes"></div>
+ <script>
+  fetch('contenedor-redes.html')
+    .then(response => response.text())
+    .then(data => {document.getElementById('contenedor-redes').innerHTML = data;
+});
+ </script>
+	
+<p><a href="mailto:ixi@ixi.com.ar"><img src="correologo.png" alt="Contacto" width="10%" style="filter: invert(21%);"></a></p>
+
+<div id="lista-prensa"></div>
+<script>
+fetch('lista-prensa.html')
+  .then(res => res.text())
+  .then(data => document.getElementById('lista-prensa').innerHTML = data);
+</script>
+
+<h2 style="text-align: center; margin-top: 15%"><a href="/index.html" class="l">VISITAR WEB OFICIAL</a></h2>
+    
+<div id="pie-pagina" style="text-align: center"></div> 
+<script>
+fetch('pie-pagina.html')
+  .then(res => res.text())
+  .then(data => document.getElementById('pie-pagina').innerHTML = data);
+</script>
+</body>
+</html>
