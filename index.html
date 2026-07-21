@@ -13,15 +13,15 @@
 </head>
 <body style="font-family: Arial; text-align: center; background: #FFFFFF; color: #111;">
 
- <h1><img src="logo.png" alt="IXI LOGO" width="80%"></h1>
+<h1><img src="logo.png" alt="IXI LOGO" width="80%"></h1>
 
- <p style="font-size: 11px;">Proyecto artístico independiente de Argentina.</p>
-  <p>
-    <a href="https://open.spotify.com/artist/5doXKNecFEUVI3tVZ3wdLP" target="_blank"><img src="spotilogo.svg" alt="Spotify de IXI" width="20%" style="margin-right:16px;filter: invert(85%);"></a>   
-    <a href="https://instagram.com/ixi.ahora" target="_blank"><img src="iglogo.svg" alt="Instagram de IXI" width="20%" style="margin-right:15px;filter: invert(85%);"></a>    
-   <a href="https://m.youtube.com/@ixiahora" target="_blank"><img src="ytlogo.svg" alt="Youtube de IXI" width="23%" style="margin-top:15px;filter: invert(85%);"></a>
-  </p>
-   <p style="margin-top:10%"><iframe width="80%" height="auto" src="https://www.youtube.com/embed/videoseries?si=kIW0dZ6hg8ec9MzD&amp;list=PLXXt7n8h9ocBOqJIMq5qrJBT-7ywl4n1G&vq=hd1080" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="0"></iframe></p>
+<div id="main-box"></div>
+ <script>
+  fetch('main-box.html')
+    .then(response => response.text())
+    .then(data => {document.getElementById('main-box').innerHTML = data;
+});
+ </script> 
 
 <div id="info-contacto"></div>
  <script>
@@ -57,17 +57,15 @@
     showImage(current);
   }, 5000);
 </script>   
+</p>        
 
-     </p>        
-  
-    <h2 style="margin-top:50px">BIOGRAFÍA</h2>
- <p>IXI nació como idea en 2018, justo después de la separación de mi banda anterior, Vinilo en Blanco. A mis 21 años, sentí la necesidad de encontrar un medio de expresión propio, y una nueva identidad,pero nunca me sentí completamente listo para mostrarlo al mundo. Durante años, IXI permaneció en gestación, un laboratorio personal donde exploraba sonidos y emociones hasta encontrar la voz auténtica que hoy define el proyecto.</p>
-
-    <p>El sonido de IXI B combina rock moderno con capas electrónicas y atmósferas chill, creando un espacio donde la música respira y evoluciona libremente. No hay reglas ni etiquetas fijas; cada canción es un experimento, un reflejo de mi búsqueda constante por un lenguaje propio.</p>
-
-    <p>Lo que impulsa IXI es la idea de expresarse sin miedo, sin importar nada más. Cada nota y cada atmósfera son un acto de autenticidad, un recordatorio de que a veces el gesto más puro es simplemente hacer ruido y dejarse sentir, sin filtros ni límites.</p>
-
-    <p>Tras años de preparación, IXI finalmente empezó a tomar forma en 2024, listo para compartir su mundo musical. Es un proyecto que sigue creciendo, invitando a quienes escuchan a explorar, sentir y dejarse llevar por la música como un espacio seguro para la expresión y la experimentación.</p>
+<div id="resumen-inicio"></div>
+ <script>
+  fetch('resumen-inicio.html')
+    .then(response => response.text())
+    .then(data => {document.getElementById('resumen-inicio').innerHTML = data;
+});
+ </script> 
 
 <div id="discografia"></div>
  <script>
@@ -85,7 +83,12 @@
 });
  </script>
          
-  <p style="font-size: 11px;">Web en desarrollo by ixi.</p>
-            <p style="font-size: 8px;">IXI ® – Marca registrada (INPI)</p>
-           </body>
+<div id="pie-pagina" style="text-align: center"></div> 
+<script>
+fetch('pie-pagina.html')
+  .then(res => res.text())
+  .then(data => document.getElementById('pie-pagina').innerHTML = data);
+</script>
+           
+</body>
 </html>
