@@ -5,7 +5,7 @@
       background-color: #FFFFFF; /* color inicial */
       animation: respirar 8s infinite alternate;
       color: #111; /* texto visible sobre fondo oscuro */
-      font-family: Arial, sans-serif;
+      font-family: system-ui, sans-serif;
     }
 
    @keyframes respirar {
