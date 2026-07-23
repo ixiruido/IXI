@@ -1,4 +1,4 @@
-    /* Efecto de fondo respirando */
+    
     body {
       margin: 0;
       height: 100vh;
@@ -6,8 +6,9 @@
       animation: respirar 8s infinite alternate;
       color: #111; /* texto visible sobre fondo oscuro */
       font-family: system-ui, sans-serif;
+      text-align: center;
     }
-
+/* Efecto de fondo respirando */
    @keyframes respirar {
   0%   { background-color: #FFFFFF; }
   25%  { background-color: #F0F0F0; }
