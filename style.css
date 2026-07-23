@@ -7,13 +7,8 @@
       color: #111; /* texto visible sobre fondo oscuro */
       font-family: system-ui, sans-serif;
       text-align: center;
-    }
-body {
-padding: 2% 30%;}
-  
-@media (max-width: 700px){
-body {
-padding: 2% 10%;}
+      padding: 2% 30%;}
+      @media (max-width: 700px){body {padding: 2% 10%;}
 }
 
 /* Efecto de fondo respirando */
