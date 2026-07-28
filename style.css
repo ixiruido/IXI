@@ -1,29 +1,46 @@
-    
-    body {
-      margin: 0;
-      height: 100vh;
+/* Efecto de fondo respirando */
+body {margin: 0; height: 100vh;
       background-color: #FFFFFF; /* color inicial */
       animation: respirar 8s infinite alternate;
       color: #111; /* texto visible sobre fondo oscuro */
       font-family: system-ui, sans-serif;
-      text-align: center;
-      padding: 2% 30%;}
-      @media (max-width: 700px){body {padding: 2% 10%;}
-}
-
-/* Efecto de fondo respirando */
+      text-align: center; padding: 2% 30%;}
+      @media (max-width: 700px){body {padding: 2% 10%;}}
    @keyframes respirar {
   0%   { background-color: #FFFFFF; }
   25%  { background-color: #F0F0F0; }
   50%  { background-color: #E0E0E0; }
   75%  { background-color: #F0F0F0; }
-  100% { background-color: #FFFFFF; } 
-}
+  100% { background-color: #FFFFFF; }}
 
 /* Configuración para estilo visual de enlaces */
-.l {
-      color: inherit;          /* mismo color que el texto */
+.l {color: inherit;          /* mismo color que el texto */
       text-decoration: none;   /* sin subrayado */
       cursor: pointer;         /* sin la manito */
-      pointer-events: auto;    /* mantiene el click activo */
-    }
+      pointer-events: auto;    /* mantiene el click activo */}
+
+/* Estilo de Botones de Tabla */      
+<style>
+    body {font-family: Arial, sans-serif;  margin: 20px;
+      background: #111; color: #eee;
+      text-align: center; font-size: 16px; /* base legible */}
+    h1 {margin-bottom: 30px;}
+    table {width: 90%; max-width: 800px; margin: 0 auto;
+      border-collapse: collapse;}
+    td {border: none; padding: 10px; vertical-align: top;}
+    .plataforma {text-align: center; margin-bottom: 20px;}
+    .plataforma .nombre {font-weight: bold;
+      font-size: 1.2rem; margin-bottom: 5px;}
+    .plataforma .link-crudo span {font-size: 0.65rem;
+      word-break: break-word; display: block;
+      margin-bottom: 5px;}
+    .plataforma .botones button {padding: 6px 12px;
+      cursor: pointer; border: none;
+      border-radius: 5px; background-color: #222;
+      color: white; font-size: 0.9rem;
+      transition: background-color 0.3s;
+      margin-right: 5px; margin-bottom: 5px;}
+    .plataforma .botones button:hover {background-color: #555;}
+    @media (max-width: 480px) {.plataforma .botones button {
+        width: 100%; /* botones verticales en móvil */}}
+</style>
