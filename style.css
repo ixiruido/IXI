@@ -21,19 +21,19 @@ body {margin: 0; height: 100vh;
 
 /* Estilo de Botones de Tabla */      
 <style>
-    body {font-family: Arial, sans-serif;  margin: 20px;
+    body {font-family: Arial, sans-serif;  margin: 2px;
       background: #111; color: #eee;
       text-align: center; font-size: 16px; /* base legible */}
-    h1 {margin-bottom: 30px;}
+    h1 {margin-bottom: 2px;}
     table {width: 90%; max-width: 800px; margin: 0 auto;
       border-collapse: collapse;}
     td {border: none; padding: 10px; vertical-align: top;}
-    .plataforma {text-align: center; margin-bottom: 20px;}
+    .plataforma {text-align: center; margin-bottom: 2px;}
     .plataforma .nombre {font-weight: bold;
-      font-size: 1.2rem; margin-bottom: 5px;}
+      font-size: 1.2rem; margin-bottom: 2px;}
     .plataforma .link-crudo span {font-size: 0.65rem;
       word-break: break-word; display: block;
-      margin-bottom: 5px;}
+      margin-bottom: 2px;}
     .plataforma .botones button {padding: 6px 12px;
       cursor: pointer; border: none;
       border-radius: 5px; background-color: #222;
@@ -41,6 +41,4 @@ body {margin: 0; height: 100vh;
       transition: background-color 0.3s;
       margin-right: 5px; margin-bottom: 5px;}
     .plataforma .botones button:hover {background-color: #555;}
-    @media (max-width: 480px) {.plataforma .botones button {
-        width: 100%; /* botones verticales en móvil */}}
 </style>
